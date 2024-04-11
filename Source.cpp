@@ -11,6 +11,7 @@ int main() {
 
 	int const arraySize = 20;
 	int randArray[arraySize];
+
 	srand(time(0));
 
 	do {
@@ -19,8 +20,9 @@ int main() {
 		}
 		displayRun(randArray, arraySize);
 		cout << endl;
-	} while (true);
-	
+	} while (!hasRun(randArray, arraySize));
+
+	return 0;	
 }
 
 void displayRun(int values[], int size) {
@@ -34,6 +36,7 @@ void displayRun(int values[], int size) {
 			}
 			else {
 				cout << parenthHold << ")";
+				continueRun = false;
 			}
 		}
 		else {
